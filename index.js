@@ -4,9 +4,9 @@
  * @class: Software Development Diploma program.
  * @author: Jhenyffer Cristo Marques.
  */
+//Mark to Grade converter function
 function convertGrade() {
   var grade = parseInt(document.getElementById("mark").value);
-  console.log(grade);
 
   if (isNaN(grade)) {
     document.getElementById("result").innerHTML =
@@ -25,3 +25,13 @@ function convertGrade() {
   }
   document.getElementById("result").innerHTML = `Your grade is ${grade}`;
 }
+
+//Temperature Converter function
+function convertTempCelcius() {
+  var temperature = parseFloat(document.getElementById("temp").value);
+  temperature = ((temperature - 32) * 5) / 9;
+
+  document.getElementById("tempCelcius").innerHTML = `Temperature in Celcius is: ${temperature}`;
+}
+
+
