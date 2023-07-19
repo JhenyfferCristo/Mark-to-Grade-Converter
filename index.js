@@ -27,11 +27,14 @@ function convertGrade() {
 }
 
 //Temperature Converter function
-function convertTempCelcius() {
-  var temperature = parseFloat(document.getElementById("temp").value);
-  temperature = ((temperature - 32) * 5) / 9;
-
-  document.getElementById("tempCelcius").innerHTML = `Temperature in Celcius is: ${temperature}`;
+function convertTemperature() {
+  const fahrenheit = parseFloat(document.getElementById("temp").value);
+  const tempInCelcius = ((fahrenheit - 32) * 5) / 9;
+  document.getElementById(
+    "tempCelcius"
+  ).innerHTML = `Temperature in Celcius is: ${tempInCelcius}`;
+  var tempInKelvin = tempInCelcius + 273.15;
+  document.getElementById(
+    "tempKelvin"
+  ).innerHTML = `Temperature in Kelvin is: ${tempInKelvin}`;
 }
-
-
