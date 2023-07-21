@@ -39,7 +39,6 @@ function convertTemperature() {
   ).innerHTML = `Temperature in Kelvin is: ${tempInKelvin}`;
 }
 
-//sorting array by name and salary function
 var dataSet = [
   [
     "Brielle Williamson",
@@ -288,17 +287,59 @@ var dataSet = [
     "$85,675",
   ],
 ];
-var arrayByName = dataSet.sort((a, b) => {
-  const nameA = a[0].toLowerCase();
-  const nameB = b[0].toLowerCase();
-  return nameA.localeCompare(nameB);
-});
 
-console.log(arrayByName.join("\n"));
+//Creating the table rows
+function populateDataRow(data, list) {
+  let cells = "";
+  for (let i = 0; i < data.length; i++) {
+    cells += `<td>${data[i]}</td>`;
+  }
+  list.insertAdjacentHTML("beforeend", `<tr>${cells}</tr>`);
+}
 
-var arreaBySalary = dataSet.sort((a, b) => {
-  const salaryA = parseInt(a[5].replace(/[$,]/g, ""));
-  const salaryB = parseInt(b[5].replace(/[$,]/g, ""));
-  return salaryB - salaryA;
-});
-console.log(arreaBySalary.join("\n"));
+//Creating the table body
+function populateTable(dataArray, list) {
+  for (let i = 0; i < dataArray.length; i++) {
+    populateDataRow(dataArray[i], list);
+  }
+}
+//Display initial data
+populateTable(dataSet, document.getElementById("list"));
+
+//sort and create table function
+function sortDataBy(option) {
+  const list = document.getElementById("list");
+  list.innerHTML = ""; //Clear the table body
+  if (option === "name") {
+    var arrayByName = dataSet.slice().sort((a, b) => {
+      const nameA = a[0].toLowerCase();
+      const nameB = b[0].toLowerCase();
+      return nameA.localeCompare(nameB);
+    });
+    populateTable(arrayByName, list);
+  } else if (option === "salary") {
+    var arrayBySalary = dataSet.slice().sort((a, b) => {
+      const salaryA = parseInt(a[5].replace(/[$,]/g, ""));
+      const salaryB = parseInt(b[5].replace(/[$,]/g, ""));
+      return salaryB - salaryA;
+    });
+    populateTable(arrayBySalary, list);
+  }
+}
+//DropDown implementation
+function dropdownMenu() {
+  document.getElementById("sortDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
