@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./temp.css" />
+    <link rel="stylesheet" href="./footer.css"/>
     <title>Temperature Converter</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Temperature Converter</h1>
-    <div>
-        <label for="temp">Temperature in Fahrenheit</label>
-        <input type="text" id="temp">
-        </div>
-        <button onclick="convertTemperature()">Convert</button>
-        <div id="tempCelcius">Temperature in Celcius is:</div>
-        <div id="tempKelvin">Temperature Celcius to Kelvin is:</div>
-    
-        <script src="index.js"></script>
-</body>
+    <div class="inputTemp">
+      <label for="temp">Temperature in Fahrenheit</label>
+      <input type="text" id="temp" />
+      <button onclick="convertTemperature()">Convert</button>
+      <div id="tempCelcius">Temperature in Celcius is:</div>
+      <div id="tempKelvin">Temperature Celcius to Kelvin is:</div>
+    </div>
+    <footer></footer>
+    <script src="./index.js"></script>
+    <script src="./footer.js"></script>
+  </body>
 </html>

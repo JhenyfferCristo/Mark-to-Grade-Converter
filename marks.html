@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mark to Grade</title>
-</head>
-<body>
+    <link rel="stylesheet" href="./grade.css" />
+    <link rel="stylesheet" href="./footer.css"/>
+  </head>
+  <body>
     <h1>Mark to Grade Converter</h1>
-    
-    <div>
-    <label for="mark">Marks</label>
-    <input type="text" id="mark">
-    </div>
-    <button onclick="convertGrade()">Grade</button>
-    <div id="result">Your Grade is:</div>
 
-    <script src="index.js"></script>
-</body>
+    <div class="marksInput">
+      <label for="mark">Marks</label>
+      <input type="text" id="mark" />
+
+      <button onclick="convertGrade()">Grade</button>
+      <div id="result">Your Grade is:</div>
+    </div>
+    <footer></footer>
+    <script src="./index.js"></script>
+    <script src="./footer.js"></script>
+  </body>
 </html>

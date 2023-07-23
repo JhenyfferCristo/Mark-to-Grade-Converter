@@ -23,7 +23,7 @@ function convertGrade() {
   } else {
     grade = "F";
   }
-  document.getElementById("result").innerHTML = `Your grade is ${grade}`;
+  document.getElementById("result").innerHTML = `Your grade is: ${grade}`;
 }
 
 //Temperature Converter function
